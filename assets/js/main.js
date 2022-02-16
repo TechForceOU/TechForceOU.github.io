@@ -64,8 +64,6 @@
 						$bg = document.createElement('div');
 							$bg.style.backgroundImage = 'url("' + k + '")';
 							$bg.style.backgroundPosition = settings.images[k];
-							$bg.style.backgroundSize = 'contain';
-							$bg.style.backgroundRepeat = 'no-repeat';
 							$wrapper.appendChild($bg);
 
 					// Add it to array.
