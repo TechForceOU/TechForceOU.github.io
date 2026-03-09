@@ -1,0 +1,178 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Cta from "@components/cta.astro";
+import Badge from "@components/ui/badge.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout
+  title="Industries"
+  description="TechForce serves IoT, healthcare, and enterprise infrastructure teams — industries where system reliability and data integrity are non-negotiable."
+  footerMargin={false}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="badge">INDUSTRIES</Fragment>
+      <Fragment slot="title">Industries we serve</Fragment>
+      <Fragment slot="desc">
+        Deep domain experience in three sectors where reliability and data integrity are non-negotiable.
+      </Fragment>
+    </Sectionhead>
+
+    <!-- IoT Platforms -->
+    <section id="iot" class="mt-20 scroll-mt-24">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <Badge color="indigo">IoT Platforms</Badge>
+          <h2 class="text-3xl lg:text-4xl font-bold mt-4">
+            IoT platforms that handle real device complexity
+          </h2>
+          <div class="mt-6 space-y-4 text-slate-600 leading-relaxed">
+            <p>
+              Building for IoT means building for failure — devices disconnect, timestamps drift, networks partition, and data arrives out of order. Consumer-grade approaches collapse under these conditions. Industrial IoT demands a different level of engineering.
+            </p>
+            <p>
+              We've built backend platforms that connect thousands of devices, ingest high-frequency telemetry data, apply edge processing logic, and expose clean APIs for downstream applications and dashboards. We understand the MQTT broker layer, the time-series storage problem, the firmware update pipeline, and the security requirements.
+            </p>
+          </div>
+          <div class="mt-8">
+            <h3 class="font-semibold text-slate-800">How TechForce helps</h3>
+            <ul class="mt-4 space-y-2">
+              {[
+                "Device connectivity infrastructure (MQTT, CoAP, WebSocket)",
+                "Time-series data ingestion & storage at scale",
+                "Edge processing & on-device logic coordination",
+                "Device management, provisioning & OTA updates",
+                "Real-time dashboards & alerting pipelines",
+                "Security architecture for connected device fleets",
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <Icon name="ph:check-circle-fill" class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="mt-6">
+            <a href="/services#platforms" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1 transition">
+              Relevant capabilities: Software Platforms & System Integration
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-12 flex items-center justify-center aspect-square">
+          <Icon name="fluent:iot-24-regular" class="w-32 h-32 text-indigo-400" />
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-16 border-slate-100" />
+
+    <!-- Healthcare Technology -->
+    <section id="healthcare" class="scroll-mt-24">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="md:order-2">
+          <Badge color="purple">Healthcare Technology</Badge>
+          <h2 class="text-3xl lg:text-4xl font-bold mt-4">
+            Healthcare systems built with compliance in mind
+          </h2>
+          <div class="mt-6 space-y-4 text-slate-600 leading-relaxed">
+            <p>
+              Healthcare software carries consequences that most software doesn't. Data privacy regulations, interoperability requirements, audit trails, and clinical workflow constraints are not optional — they're part of the design. Teams that learn this late pay dearly for it.
+            </p>
+            <p>
+              We've worked on EHR integration, medical device data pipelines, patient-facing applications, and clinical decision support infrastructure. We understand FHIR, HL7, and the constraints of integrating with legacy hospital systems. We design for compliance from the architecture level, not the compliance-review level.
+            </p>
+          </div>
+          <div class="mt-8">
+            <h3 class="font-semibold text-slate-800">How TechForce helps</h3>
+            <ul class="mt-4 space-y-2">
+              {[
+                "EHR integration using FHIR & HL7 standards",
+                "Secure health data storage & access control",
+                "Medical device data ingestion & processing",
+                "Clinical workflow automation",
+                "Audit logging & compliance infrastructure",
+                "AI-assisted clinical decision support systems",
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <Icon name="ph:check-circle-fill" class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="mt-6">
+            <a href="/services#integration" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1 transition">
+              Relevant capabilities: System Integration & AI Agentic Systems
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-12 flex items-center justify-center aspect-square">
+          <Icon name="fluent:heart-pulse-24-regular" class="w-32 h-32 text-purple-400" />
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-16 border-slate-100" />
+
+    <!-- Enterprise Infrastructure -->
+    <section id="enterprise" class="scroll-mt-24">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <Badge color="indigo">Enterprise Infrastructure</Badge>
+          <h2 class="text-3xl lg:text-4xl font-bold mt-4">
+            Enterprise-grade systems that scale with your operations
+          </h2>
+          <div class="mt-6 space-y-4 text-slate-600 leading-relaxed">
+            <p>
+              Enterprise software has its own breed of complexity: organisational requirements, multi-tenant architecture, permission systems, audit trails, integration with procurement, HR, and finance systems. The kind of software that has to work for 500 internal users with very different workflows.
+            </p>
+            <p>
+              We build the internal platforms, API layers, data infrastructure, and system integrations that enterprise operations teams depend on. We're comfortable working within enterprise security and compliance constraints, coordinating with internal IT teams, and building for the long-term.
+            </p>
+          </div>
+          <div class="mt-8">
+            <h3 class="font-semibold text-slate-800">How TechForce helps</h3>
+            <ul class="mt-4 space-y-2">
+              {[
+                "Internal platform & tooling development",
+                "Multi-tenant SaaS backend architecture",
+                "ERP, CRM, and HRIS integration",
+                "Data warehouse & reporting infrastructure",
+                "Role-based access control & audit systems",
+                "AI workflow automation for internal operations",
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <Icon name="ph:check-circle-fill" class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="mt-6">
+            <a href="/services#platforms" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1 transition">
+              Relevant capabilities: Software Platforms, Integration & AI
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-slate-50 to-slate-200 rounded-2xl p-12 flex items-center justify-center aspect-square">
+          <Icon name="fluent:building-24-regular" class="w-32 h-32 text-slate-400" />
+        </div>
+      </div>
+    </section>
+
+    <div class="my-16"></div>
+  </Container>
+  <Cta />
+</Layout>

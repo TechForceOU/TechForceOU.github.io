@@ -2,18 +2,13 @@
 import Button from "./ui/button.astro";
 ---
 
-<!-- // This is a working contact form //
-     To make this contact form work, create your free access key from https://web3forms.com/
-     Then you will get all form submissions in your email inbox. -->
 <form
-  action="https://api.web3forms.com/submit"
+  action="/submit"
   method="POST"
   id="form"
   class="needs-validation"
   data-astro-reload
   novalidate>
-  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-  <!-- Create your free access key from https://web3forms.com/ -->
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="mb-5">
     <input
@@ -79,9 +74,6 @@ import Button from "./ui/button.astro";
 </style>
 
 <script is:inline>
-  // astro:page-load to support view Transitions.
-  // use DOMContentLoaded event if you are not using View Transitions
-
   document.addEventListener(
     "astro:page-load",
     () => {
@@ -97,11 +89,12 @@ import Button from "./ui/button.astro";
         }
         const formData = new FormData(form);
         const object = Object.fromEntries(formData);
+        object.message = "TechForce\n\n" + object.message;
         const json = JSON.stringify(object);
 
         result.innerHTML = "Sending...";
 
-        fetch("https://api.web3forms.com/submit", {
+        fetch("https://api.chatcgm.com/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -113,7 +106,7 @@ import Button from "./ui/button.astro";
             let json = await response.json();
             if (response.status == 200) {
               result.classList.add("text-green-500");
-              result.innerHTML = json.message;
+              result.innerHTML = "Thank you for your message! We will get back to you soon.";
             } else {
               console.log(response);
               result.classList.add("text-red-500");

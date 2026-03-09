@@ -7,6 +7,7 @@ import "@fontsource-variable/inter/index.css";
 
 interface Props {
   title?: string;
+  description?: string;
   footerMargin?: boolean;
 }
 
@@ -17,11 +18,14 @@ const resolvedImageWithDomain = new URL(
   Astro.site
 ).toString();
 
-const { title, footerMargin = true } = Astro.props;
+const { title, description, footerMargin = true } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship Pro"
-  : "Astroship Pro - SAAS Startup Website Template for Astro";
+  ? title + " | " + "TechForce"
+  : "TechForce — Software Engineering & AI Agentic Systems";
+
+const makeDescription = description ||
+  "Tech Force OÜ — Software platform development, system integration, and AI agentic systems for enterprise teams.";
 ---
 
 <!doctype html>
@@ -34,39 +38,46 @@ const makeTitle = title
 
     <SEO
       title={makeTitle}
-      description="Astroship Pro - SAAS & Startup Website Template for Astro built with TailwindCSS."
+      description={makeDescription}
       canonical={canonicalURL}
-      twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
-      }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship Pro - SAAS &Startup Website Template for Astro`,
+          title: makeTitle,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "TechForce — Software Engineering & AI Agentic Systems",
         },
       }}
     />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tech Force OÜ",
+      "url": "https://techforce.pro",
+      "description": "Software platform development, system integration, and AI agentic systems.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EE"
+      }
+    })} />
     <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
       }
-      /* Remove arrows from list-style - fix for tailwindcss */
       details > summary.list-none::-webkit-details-marker,
       details > summary.list-none::marker {
         display: none;
       }
     </style>
-    <!-- Enable this if you want to use Astro ViewTransitions  -->
     <ViewTransitions />
+    <script is:inline type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "30min", {origin:"https://app.cal.com"});
+      Cal.ns["30min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#FF784F"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
   </head>
   <body>
     <Navbar />

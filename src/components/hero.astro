@@ -1,13 +1,11 @@
 ---
-import { Picture } from "astro:assets";
-import heroImage from "../assets/hero-screenshot.png";
 import Link from "@components/ui/link.astro";
 import Container from "@components/container.astro";
 ---
 
 <div class="overflow-x-clip">
   <Container>
-    <main class="grid lg:grid-cols-5 place-items-center relative">
+    <main class="grid place-items-center py-20 lg:py-28 relative">
       <div
         class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 right-0 top-0">
       </div>
@@ -15,46 +13,28 @@ import Container from "@components/container.astro";
         class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 right-56 top-10">
       </div>
 
-      <div class="max-w-sm md:max-w-max lg:col-span-2">
+      <div class="max-w-3xl text-center">
         <h1
-          class="text-3xl lg:text-4xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter [text-wrap:balance] text-center lg:text-start">
-          Create websites with Astroship™
+          class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter [text-wrap:balance]">
+          Software engineering. Agentic AI. Delivered.
         </h1>
         <p
-          class="text-lg mt-4 max-w-lg text-slate-600 [text-wrap:balance] text-center lg:text-start">
-          Pro version of popular Astroship starter template made for startups.
-          Built with Astro and Tailwind CSS.
+          class="text-lg mt-6 max-w-2xl mx-auto text-slate-600 [text-wrap:balance]">
+          TechForce builds production-grade software platforms, system integrations, and AI agentic systems for teams that need reliability, speed, and deep technical expertise.
         </p>
         <div
-          class="mt-6 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-3">
-          <Link
-            href="https://web3templates.com/templates/astroship-pro-astro-saas-website-template"
-            target="_blank"
-            class="flex gap-1 items-center justify-center"
-            rel="noopener">
-            Buy Template — $49
-          </Link>
+          class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+          <button type="button" class="flex gap-1 items-center justify-center rounded-full transition cursor-pointer px-7 py-2.5 bg-indigo-600 text-white hover:bg-indigo-800" data-cal-link="techforce/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}'>
+            Book a Discovery Call
+          </button>
           <Link
             size="lg"
             style="outline"
-            rel="noopener"
-            href="https://github.com/surjithctly/astroship"
-            class="flex gap-1 items-center justify-center"
-            target="_blank">
-            Free Version
+            href="/services"
+            class="flex gap-1 items-center justify-center">
+            Explore Our Services
           </Link>
         </div>
-      </div>
-      <div class="py-3 lg:col-span-3 lg:-mr-44">
-        <Picture
-          src={heroImage}
-          alt="Astronaut in the air"
-          formats={["avif", "webp"]}
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          widths={[240, 540, 720, heroImage.width]}
-          loading="eager"
-          fetchpriority="high"
-        />
       </div>
     </main>
   </Container>

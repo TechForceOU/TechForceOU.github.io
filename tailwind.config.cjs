@@ -7,6 +7,20 @@ module.exports = {
       fontFamily: {
         sans: ["Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        indigo: {
+          50:  "#FFF4EF",
+          100: "#FFE4D6",
+          200: "#FFC9B0",
+          300: "#FFA883",
+          400: "#FF9066",
+          500: "#FF784F",
+          600: "#E85E35",
+          700: "#C44520",
+          800: "#9E3518",
+          900: "#7A2810",
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
