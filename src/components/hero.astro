@@ -1,0 +1,41 @@
+---
+import Link from "@components/ui/link.astro";
+import Container from "@components/container.astro";
+---
+
+<div class="overflow-x-clip">
+  <Container>
+    <main class="grid place-items-center py-20 lg:py-28 relative">
+      <div
+        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 right-0 top-0">
+      </div>
+      <div
+        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 right-56 top-10">
+      </div>
+
+      <div class="max-w-3xl text-center">
+        <h1
+          class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter [text-wrap:balance]">
+          Software engineering. Agentic AI. Delivered.
+        </h1>
+        <p
+          class="text-lg mt-6 max-w-2xl mx-auto text-slate-600 [text-wrap:balance]">
+          TechForce builds production-grade software platforms, system integrations, and AI agentic systems for teams that need reliability, speed, and deep technical expertise.
+        </p>
+        <div
+          class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+          <button type="button" class="flex gap-1 items-center justify-center rounded-full transition cursor-pointer px-7 py-2.5 bg-indigo-600 text-white hover:bg-indigo-800" data-cal-link="techforce/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}'>
+            Book a Discovery Call
+          </button>
+          <Link
+            size="lg"
+            style="outline"
+            href="/services"
+            class="flex gap-1 items-center justify-center">
+            Explore Our Services
+          </Link>
+        </div>
+      </div>
+    </main>
+  </Container>
+</div>

@@ -1,0 +1,218 @@
+---
+import Badge from "@components/ui/badge.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@components/ui/link.astro";
+import imgPlatform from "@assets/architecture.png";
+import imgIntegration from "@assets/feature-integration.jpg";
+import imgSecurity from "@assets/security.jpeg";
+import imgAI from "@assets/feature-ai.jpg";
+import { Image } from "astro:assets";
+
+const { nomargin } = Astro.props;
+---
+
+<div
+  class:list={[
+    "max-w-4xl mx-auto flex flex-col items-center justify-center",
+    !nomargin && "mt-24",
+  ]}>
+  <Badge color="purple">CAPABILITIES</Badge>
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center">
+    What we build
+  </h2>
+  <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+    Event-driven platforms, real-time data systems, and AI agents — engineered for production from day one.
+  </p>
+</div>
+
+<!-- Software Platform Development -->
+<div class="grid md:grid-cols-2 py-10 mt-4" id="platforms-preview">
+  <div class="grid place-items-center">
+    <div class="w-full max-w-lg aspect-square rounded-2xl overflow-hidden">
+      <Image src={imgPlatform} alt="Server rack in a data center" class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <Badge color="indigo" class="-ml-px">Software Platform Development</Badge>
+      <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+        Domain-driven backends built on event-driven architecture
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        We design systems around your business domain — not around frameworks. Event-driven architectures, message-based communication, and clean service boundaries that scale without turning into a distributed monolith.
+      </p>
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Domain-driven design & bounded contexts</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Event-driven architecture (Kafka, RabbitMQ, MQTT)</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">REST & GraphQL APIs, gRPC services</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Cloud-native infrastructure & CI/CD</span>
+        </li>
+      </ul>
+      <div class="flex items-center gap-4 mt-6">
+        <a
+          href="/services#platforms"
+          class="text-sm text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1 transition">
+          Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- System Integration -->
+<div class="grid md:grid-cols-2 py-10">
+  <div class="grid place-items-center pb-10 md:pb-0 md:order-2">
+    <div class="w-full max-w-sm aspect-square rounded-2xl overflow-hidden">
+      <Image src={imgIntegration} alt="Network cables and server interconnections" class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <Badge color="purple" class="-ml-px">System Integration</Badge>
+      <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+        Real-time data flows across every system in your stack
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        We connect IoT devices, legacy platforms, cloud services, and enterprise systems into a single real-time data layer. Stream processing, protocol translation, and reliable message delivery — no silos, no batch delays.
+      </p>
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Stream processing & real-time data pipelines</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Protocol bridging (MQTT, AMQP, WebSocket, HTTP)</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">IoT device connectivity & telemetry ingestion</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Enterprise API & EHR/ERP integration</span>
+        </li>
+      </ul>
+      <div class="flex items-center gap-4 mt-6">
+        <a
+          href="/services#integration"
+          class="text-sm text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1 transition">
+          Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AI Agentic Systems -->
+<div class="grid md:grid-cols-2 py-10">
+  <div class="grid place-items-center">
+    <div class="w-full max-w-sm aspect-square rounded-2xl overflow-hidden">
+      <Image src={imgAI} alt="AI letters glowing orange – artificial intelligence concept" class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <Badge color="purple" class="-ml-px">AI Agentic Systems</Badge>
+      <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+        AI agents that act, decide, and operate in production
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        We design and deploy autonomous AI systems — multi-step reasoning agents, tool-calling workflows, and LLM-powered automation wired into your existing infrastructure. Not demos. Production systems with monitoring and guardrails.
+      </p>
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Multi-agent orchestration & tool-use frameworks</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">RAG pipelines & structured knowledge retrieval</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Evaluation, observability & human-in-the-loop controls</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Integration with existing business systems & APIs</span>
+        </li>
+      </ul>
+      <div class="flex items-center gap-4 mt-6">
+        <a
+          href="/services#ai-agents"
+          class="text-sm text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1 transition">
+          Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Security, Authentication & Data Protection -->
+<div class="grid md:grid-cols-2 py-10">
+  <div class="grid place-items-center pb-10 md:pb-0 md:order-2">
+    <div class="w-full max-w-sm aspect-square rounded-2xl overflow-hidden">
+      <Image src={imgSecurity} alt="Abstract technology infrastructure background" class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <Badge color="indigo" class="-ml-px">Security, Authentication & Data Protection</Badge>
+      <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+        Security and compliance built into the architecture — not bolted on after
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        We engineer systems with encryption, access control, and data protection from the first commit. PII handling, role-based authentication, and audit-ready infrastructure — designed for environments where compliance isn't optional.
+      </p>
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">End-to-end encryption (at rest and in transit)</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Authentication & authorization (OAuth 2.0, SSO, RBAC)</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">PII handling, data masking & anonymization</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-indigo-500" />
+          <span class="text-sm">Audit logging, compliance controls & secure-by-default infrastructure</span>
+        </li>
+      </ul>
+      <div class="flex items-center gap-4 mt-6">
+        <a
+          href="/services#security"
+          class="text-sm text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1 transition">
+          Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

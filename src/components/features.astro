@@ -1,0 +1,57 @@
+---
+import Badge from "@components/ui/badge.astro";
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Senior engineers only",
+    description:
+      "Every project is staffed with experienced engineers — no juniors leading critical work. You get people who have built production systems before.",
+    icon: "fluent:person-star-24-regular",
+  },
+  {
+    title: "AI-native capability",
+    description:
+      "We don't bolt AI on after the fact. LLMs, agents, and intelligent pipelines are part of how we design systems from the ground up.",
+    icon: "fluent:bot-24-regular",
+  },
+  {
+    title: "Distributed, accountable",
+    description:
+      "We operate as a lean, distributed team with direct communication, clear ownership, and no agency overhead layers between you and the work.",
+    icon: "fluent:globe-24-regular",
+  },
+  {
+    title: "Domain expertise",
+    description:
+      "Deep hands-on experience in IoT, healthcare, and enterprise infrastructure — not generic web development, but complex systems engineering.",
+    icon: "fluent:book-search-24-regular",
+  },
+];
+---
+
+<div class="mt-24 max-w-3xl mx-auto flex flex-col items-center justify-center">
+  <Badge color="purple">WHY TECHFORCE</Badge>
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center">
+    We solve hard problems
+  </h2>
+  <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+    We work with teams that need more than a development shop — partners who understand hard technical problems and deliver reliable, maintainable systems.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 mt-16 gap-8 md:gap-16">
+  {
+    features.map((item) => (
+      <div class="flex flex-col gap-4 items-start group hover:bg-slate-50 hover:border-slate-100 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+        <div class="mt-1 bg-indigo-50 border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-lg grid place-items-center p-2 w-10 h-10 shrink-0">
+          <Icon class="text-indigo-500" name={item.icon} size={24} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

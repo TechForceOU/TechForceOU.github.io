@@ -1,0 +1,117 @@
+---
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Cta from "@components/cta.astro";
+import imgKirill from "@assets/team/kirill.jpeg";
+import imgPavel from "@assets/team/pavel.jpeg";
+import imgFran from "@assets/team/fran.jpeg";
+import imgLuis from "@assets/team/luis.jpeg";
+
+const team = [
+  { name: "Kirill",  title: "CEO & Founder · Solution Architect",              img: imgKirill },
+  { name: "Pavel",   title: "Lead Engineer · Full-stack & System Integration",  img: imgPavel  },
+  { name: "Fran",    title: "Senior Frontend Engineer · UI/UX",                 img: imgFran   },
+  { name: "Luis",    title: "Project Manager · Release & Delivery",             img: imgLuis   },
+];
+---
+
+<Layout
+  title="About"
+  description="About Tech Force OÜ — a software engineering company based in Estonia building backend systems and AI platforms."
+  footerMargin={false}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="badge">ABOUT TECHFORCE</Fragment>
+      <Fragment slot="title">The right engineers for the hard problems.</Fragment>
+      <Fragment slot="desc">
+        We're a small engineering company that builds complex software systems end to end — or embeds with your team to strengthen the capabilities you already have.
+      </Fragment>
+    </Sectionhead>
+
+    <!-- Team -->
+    <div class="mt-24">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight font-bold text-center">
+        Our <span class="text-indigo-600">Core Team</span>
+      </h2>
+      <p class="text-lg mt-4 text-slate-600 text-center max-w-xl mx-auto">
+        Senior professionals with deep domain expertise across backend systems, IoT, AI, and enterprise infrastructure.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mx-auto mt-12">
+      {
+        team.map((member) => (
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={member.img}
+                alt={member.name}
+                loading="lazy"
+                width={400}
+                height={400}
+                formats={["avif", "webp"]}
+                class="w-full h-full object-cover bg-slate-100 rounded-xl transition group-hover:-translate-y-1 group-hover:shadow-xl"
+              />
+            </div>
+            <div class="mt-4 text-center">
+              <h2 class="text-base font-semibold text-gray-800">{member.name}</h2>
+              <h3 class="text-sm text-slate-500 mt-1">{member.title}</h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- How We Work -->
+    <div class="mt-24 text-center">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight font-bold">
+        How we work
+      </h2>
+      <p class="text-lg mt-4 text-slate-600">
+        A clear, lightweight process — from first call to production.
+      </p>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center p-6">
+        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto">
+          <span class="text-indigo-600 font-bold text-lg">1</span>
+        </div>
+        <h3 class="font-semibold text-slate-800 mt-4">Discovery</h3>
+        <p class="text-sm text-slate-500 mt-2">
+          30-minute call to understand your requirements, constraints, and goals.
+        </p>
+      </div>
+      <div class="text-center p-6">
+        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto">
+          <span class="text-indigo-600 font-bold text-lg">2</span>
+        </div>
+        <h3 class="font-semibold text-slate-800 mt-4">Scoping</h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Technical scoping document with architecture proposal, timeline, and fixed-price or retainer options.
+        </p>
+      </div>
+      <div class="text-center p-6">
+        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto">
+          <span class="text-indigo-600 font-bold text-lg">3</span>
+        </div>
+        <h3 class="font-semibold text-slate-800 mt-4">Delivery</h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Iterative delivery with regular demos, clear milestones, and direct Slack access to your engineering team.
+        </p>
+      </div>
+      <div class="text-center p-6">
+        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto">
+          <span class="text-indigo-600 font-bold text-lg">4</span>
+        </div>
+        <h3 class="font-semibold text-slate-800 mt-4">Support</h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Ongoing maintenance, monitoring, and feature development — we stay accountable after launch.
+        </p>
+      </div>
+    </div>
+  </Container>
+  <Cta />
+</Layout>
