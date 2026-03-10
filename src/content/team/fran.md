@@ -1,7 +1,7 @@
 ---
 draft: false
 name: "Fran"
-title: "Senior Frontend Engineer · UI/UX"
+title: "Lead Engineer"
 avatar:
   src: "fran"
   alt: "Fran"

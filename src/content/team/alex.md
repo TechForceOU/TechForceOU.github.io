@@ -1,9 +1,9 @@
 ---
-draft: true
+draft: false
 name: "Alex"
-title: "Full-Stack Engineer · High-performance Systems"
+title: "Lead Engineer"
 avatar:
-  src: "../../assets/team/kirill.jpeg"
+  src: "alex"
   alt: "Alex"
 publishDate: "2024-01-04 00:00"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 name: "Luis"
-title: "Project Manager · Release & Delivery"
+title: "Release Project Manager"
 avatar:
   src: "luis"
   alt: "Luis"

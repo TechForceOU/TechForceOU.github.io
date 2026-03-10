@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
@@ -8,13 +9,13 @@ import imgKirill from "@assets/team/kirill.jpeg";
 import imgPavel from "@assets/team/pavel.jpeg";
 import imgFran from "@assets/team/fran.jpeg";
 import imgLuis from "@assets/team/luis.jpeg";
+import imgAlex from "@assets/team/alex.jpeg";
 
-const team = [
-  { name: "Kirill",  title: "CEO & Founder · Solution Architect",              img: imgKirill },
-  { name: "Pavel",   title: "Lead Engineer · Full-stack & System Integration",  img: imgPavel  },
-  { name: "Fran",    title: "Senior Frontend Engineer · UI/UX",                 img: imgFran   },
-  { name: "Luis",    title: "Project Manager · Release & Delivery",             img: imgLuis   },
-];
+const teamImages = { kirill: imgKirill, pavel: imgPavel, fran: imgFran, luis: imgLuis, alex: imgAlex };
+
+const teamMembers = (await getCollection("team", ({ data }) => !data.draft))
+  .sort((a, b) => a.data.publishDate.getTime() - b.data.publishDate.getTime())
+  .map((m) => ({ name: m.data.name, title: m.data.title, img: teamImages[m.data.avatar.src] }));
 ---
 
 <Layout
@@ -40,9 +41,9 @@ const team = [
       </p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mx-auto mt-12">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 mx-auto mt-12">
       {
-        team.map((member) => (
+        teamMembers.map((member) => (
           <div class="group">
             <div class="w-full aspect-square">
               <Picture

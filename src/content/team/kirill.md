@@ -1,7 +1,7 @@
 ---
 draft: false
 name: "Kirill"
-title: "CEO & Founder · Solution Architect"
+title: "Founder & Solution Architect"
 avatar:
   src: "kirill"
   alt: "Kirill"

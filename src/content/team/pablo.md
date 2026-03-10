@@ -1,7 +1,7 @@
 ---
 draft: false
 name: "Pavel"
-title: "Lead Engineer · Full-stack & System Integration"
+title: "Lead Engineer"
 avatar:
   src: "pavel"
   alt: "Pavel"
